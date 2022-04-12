@@ -40,6 +40,11 @@ def get_logger():
 
 class TrainConfigMixin(Tap):
     """Train Config Mixin"""
+    n_way: int = 5
+    
+    k_shot: int = 1
+    q_query: int = 5
+
     batch_size: int = 32  # Batch size per GPU/CPU for training.
     max_seq_length: int = 128  # The maximum total input sequence length after tokenization. Sequences longer than this will be truncated, sequences shorter will be padded.
     learning_rate: float = 5e-5  # The initial learning rate for Adam.
